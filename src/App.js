@@ -41,8 +41,8 @@ function App() {
             <Route path="/" element={<Welcome />}/>
             <Route path='/player' element={<Player playerAPI={playerAPI}/>} />
             <Route path='/player/:position' element={<Player playerAPI={playerAPI}/>} />
-            <Route path='/player/:pcode' element={<Details playerAPI={playerAPI}/>} />
-            <Route path='/support' element={<Support />} />
+            <Route path='/player/:position/:pcode' element={<Details playerAPI={playerAPI}/>} />
+            <Route path='/support' element={<Support supportAPI={supportAPI}/>} />
             <Route path="*" />
           </Routes>
         </BrowserRouter>

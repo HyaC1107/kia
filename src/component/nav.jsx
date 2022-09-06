@@ -1,14 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
-
-
-
-
+import { Link } from "react-router-dom";
 
 function Nav() {
     return ( 
       <nav className="navbar navbar-expand-sm bg-white sticky-top">
         <div className="container-fluid ">      
-            <Link to="/" className="navbar-brand logo" ><img src="img/logo.png"/></Link>
+            <Link to="/" className="navbar-brand logo" ><img src="https://tigers.co.kr/img/sub/bi_bi01.png"/></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

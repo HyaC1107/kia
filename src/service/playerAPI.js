@@ -22,10 +22,27 @@ export class PlayerAPI{
     }
 
     async callDetail(position,pcode) {
-        const response = await fetch(this.baseURL+"/tigers/player/detail?position="+position??""+"&pcode="+pcode??"",{
+        const response = await fetch(this.baseURL+"/tigers/player/detail?position="+position+"&pcode="+pcode??"",{
             ...this.getOption            
         })
-        console.log(response);
+        //console.log(response);
         return await response.json();
+    }
+
+    async callRecord(position,pcode){
+        //console.log("positionapi: ", position);
+        if(position=="pitcher"){
+            const response = await fetch(this.baseURL+"/tigers/record/pitching?position="+position+"&pcode="+pcode??"",{
+                ...this.getOption            
+            })
+            //console.log(response);
+            return await response.json();
+        }else{
+            const response = await fetch(this.baseURL+"/tigers/record/hitting?position="+position+"&pcode="+pcode??"",{
+                ...this.getOption            
+            })
+            //console.log(response);
+            return await response.json();
+        }       
     }
 }

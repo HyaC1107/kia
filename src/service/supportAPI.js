@@ -12,11 +12,18 @@ export class SupportAPI{
         }
     }
 
-    async support(position) {
-        const response = await fetch(this.baseURL+"/tigers/players?position="+position??"",{
+    async read() {
+        const response = await fetch(this.baseURL+"/tigers/support",{
             ...this.getOption            
         })
-        console.log(response);
+        return await response.json();
+    }
+
+    async create(comments) {
+        const response = await fetch(this.baseURL+"/tigers/support",{
+            ...this.postOption,            
+            body: JSON.stringify({comments})
+        })
         return await response.json();
     }
 }

@@ -1,16 +1,16 @@
-import { useEffect, useState, useContext } from 'react';
-import { useParams, useLocation  } from "react-router-dom";
+import { useContext } from 'react';
+import { useParams } from "react-router-dom";
 import Item from "./item";
 import { Store } from "../app";
 import PlayerNav from "./playernav";
-import Details from './details';
 
 function Player() {
     const value = useContext(Store);    
-    const {position} = useParams(); 
-    let target =[] 
-    if(position){
-        target= value.filter(e=>e.position===position);
+    const query = useParams().position; 
+    const position= {pitcher:"투수",catcher:"포수",infielder:"내야수",outfielder:"외야수"};
+    let target =[];
+    if(query){
+        target= value.filter(e=>e.position==position[query]);
     }else{
         target = value;
     }
