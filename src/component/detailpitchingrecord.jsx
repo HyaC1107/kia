@@ -26,7 +26,7 @@ function DetailPitchingRecord({records}) {
             </thead>
             <tbody>
             {records.map(e=>{
-                return <tr>
+                return <tr key={e.pcode}>
                     <td>{e.displayDate}</td>
                     <td>{e.stadium}</td>
                     <td>{e.matchTeamName}</td>

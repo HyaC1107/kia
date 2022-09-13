@@ -52,7 +52,7 @@ function Details({playerAPI}) {
                     <div className='d-flex justify-content-between mt-4 text-center'>
                         <div>
                             <b>ERA</b>
-                            <h2>{summary.era}</h2>
+                            <h2>{summary.era == "NaN" ? 0 : summary.hra}</h2>
                         </div>
                         <div>
                             <b>승</b>

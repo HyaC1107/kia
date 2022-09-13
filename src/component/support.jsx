@@ -41,7 +41,7 @@ function Support({supportAPI}) {
             {gets.map(one=>{
                 
                 const content = 
-                    <div>
+                    <div key={one._id}>
                         <div className="d-flex justify-content-between">
                         <p className="card-subtitle text-muted">{one.createdAt}</p>
                         </div>
